@@ -14,8 +14,8 @@ const { createUser, loginUser, reNewToken } = require('../controllers/auth')
 router.post(
     '/register',
     [
-        check('name', 'name is required').not().isEmpty(),
-        check('email', 'email is required').isEmail(),
+        check('name', 'Name is required').not().isEmpty(),
+        check('email', 'Email is required').isEmail(),
         check('password', 'The password must be at least 6 characters').isLength({ min:6 }),
         fieldValidator
     ],
@@ -24,7 +24,7 @@ router.post(
 router.post(
     '/login',
     [
-        check('email', 'email is required').isEmail(),
+        check('email', 'Email is required').isEmail(),
         check('password', 'The password must be at least 6 characters').isLength({ min:6 }),
         fieldValidator
     ],
